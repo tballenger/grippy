@@ -1,0 +1,124 @@
+<%= form_tag charges_path do %>
+  <article>
+    <label class="amount">
+      <span>Amount: $5.00</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="700"></script>
+<% end %>
+
+
+
+<div class="col-md-offset-3 col-md-6">
+	<div class="row">
+
+		<div class="btn-group">
+		  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+		    Quantity: 1 <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu">
+		    <li class="active"><a href="#">1</a></li>
+		    <li><a href="#">2</a></li>
+		    <li><a href="#">3</a></li>
+		    <li><a href="#">4</a></li>
+		    <li><a href="#">5</a></li>
+		    <li><a href="#">6</a></li>
+		    <li><a href="#">7</a></li>
+		    <li><a href="#">8</a></li>
+		    <li><a href="#">9</a></li>
+		    <li><a href="#">10</a></li>
+		  </ul>
+		</div>
+
+		<h3>Billing Information</h3>
+		
+	    <div class="row form-group">
+	        <div class="col-sm-12">
+	        	<label class="sr-only">Credit Card Number</label>
+
+	            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Credit Card Number" required="">
+	        </div>
+	    </div>
+
+	    <div class="row form-group">
+	        <div class="col-sm-6">
+	        	<label class="sr-only">Expiration Date</label>
+	            <input type="text" class="form-control" name="email" placeholder="Expiration Date" required="">
+	        </div>
+	        <div class="col-sm-6">
+	        	<label class="sr-only">CVC</label>
+	            <input type="email" class="form-control" name="phone" placeholder="Security Code" required="">
+	        </div>
+	    </div>
+	    <div class="row form-group">
+	        <div class="col-sm-6">
+	        	<label class="sr-only">Billing Zipcode</label>
+	            <input type="text" class="form-control" placeholder="Billing Zipcode" required="">
+	        </div>
+	        <div class="col-sm-6">
+	        	<label class="sr-only">Contact Email</label>
+	            <input type="Email" class="form-control" placeholder="Contact Email" required="">
+	        </div>
+	    </div> 
+
+
+
+	</div><!-- row-->
+
+
+	<div class="row">
+		<h3>Shipping Address</h3>
+	    <div class="row form-group">
+	        <div class="col-sm-6">
+	        	<label class="sr-only">First Name</label>
+	            <input type="text" class="form-control" id="firstName" placeholder="First Name" required="">
+	        </div>
+	        <div class="col-sm-6">
+	        	<label class="sr-only">Last Name</label>
+	            <input type="text" class="form-control" id="middleName" placeholder="Last Name" required="">
+	        </div>
+	    </div>
+
+	    <div class="row form-group">
+	        <div class="col-sm-8">
+	        	<label class="sr-only">Shipping Address</label>
+	            <input type="email" class="form-control" placeholder="Shipping Address" required="">
+	        </div>
+	        <div class="col-sm-4">
+	        	<label class="sr-only">Address 2</label>
+	            <input type="email" class="form-control" placeholder="Apt, Unit, Suite" required="">
+	        </div>
+	    </div>
+	    <div class="row form-group">
+	        <div class="col-sm-4">
+	        	<label class="sr-only">City</label>
+	            <input type="text" class="form-control" placeholder="City" required="">
+	        </div>
+	        <div class="col-sm-4">
+	        	<label class="sr-only">State</label>
+	            <input type="text" class="form-control" placeholder="State" required="">
+	        </div>
+	        <div class="col-sm-4">
+	        	<label class="sr-only">Zipcode</label>
+	            <input type="text" class="form-control" placeholder="Zipcode" required="">
+	        </div>
+	    </div> 
+		
+		<div class="cc-submit well">
+			<span><h4>Total (shipping included): </span><span><b>$7</b></h4></span>
+			<%= link_to "Submit Order", "#", :class => 'btn btn-success btn-lg' %>
+		</div>
+		<span class="center text-muted">
+			<i class="fa fa-lock"></i>
+			Secured by 128-bit encryption
+		</span>
+	</div><!-- row-->
+
+
+</div>
+
+

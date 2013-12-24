@@ -25,6 +25,9 @@ gem 'jquery-rails'
 
 gem "font-awesome-rails"
 
+# stripe 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
